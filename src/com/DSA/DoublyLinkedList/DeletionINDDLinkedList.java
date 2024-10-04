@@ -54,6 +54,26 @@ public class DeletionINDDLinkedList {
 		prev.next = null;
 		return head;
 	}
+	public static Node deleteKthElementInDDL(Node head, int k) {
+		if(head == null || head.next ==null) {
+			return null;
+		}
+		if(k==1) {
+			return head = head.next;
+		}
+		Node temp = head,previous =null;
+		int count=0;
+		while(temp!=null) {
+			count=count+1;
+			if(k==count) {
+				previous.next =previous.next.next;
+				break;
+			}
+			previous =temp;
+			temp=temp.next;
+		}
+		return head;
+	}
 	
 	// delete the tail
 	public static Node deleteTailInDDL(Node head) {
@@ -101,7 +121,14 @@ public class DeletionINDDLinkedList {
 			System.out.print(headAfterRTail.data+"  ");
 			headAfterRTail = headAfterRTail.next;
 		}
-		
+		System.out.println();
+		Node head4 =createDDLList(arr);
+		int value=1;
+		Node headAfterKele =deleteKthElementInDDL(head4,value);
+		while(headAfterKele != null) {
+			System.out.print(headAfterKele.data+"  ");
+			headAfterKele = headAfterKele.next;
+		}
 		
 
 	}

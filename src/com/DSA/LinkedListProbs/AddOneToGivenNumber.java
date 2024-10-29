@@ -42,7 +42,8 @@ public class AddOneToGivenNumber {
 	public static void main(String[] args) {
 		int arr[] = {1,5,9};
 		Node head = BasicInLinkedList.creatLinkedList(arr);
-		Node temp = head;
+		Node newHead = addOneToGivenNumber(head);
+		Node temp = newHead;
 		while(temp !=null) {
 			System.out.print(temp.data+"  ");
 			temp = temp.next;
